@@ -618,7 +618,7 @@ body {
         cursor: pointer;
     }
 
-    .main.active {
+    .main.active, .main {
         width: 100%;
         left: 0;
     }
