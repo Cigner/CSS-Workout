@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Infinity Animation</title>
+        <link rel="stylesheet" href="infinity_style.css">
+    </head>
+    <body>
+        <section>
+            <div class="text">Infinity Loop</div>
+            <div class="container">
+                <div id="circle1" class="circle"></div>
+                <div id="circle2" class="circle"></div>
+            </div>
+            <a href="./../index.html"><div class="button">Return</div></a>
+        </section>
+    </body>
+    <script>
+            for(var i=0; i<=20; i++) {
+                document.getElementById("circle1").innerHTML += '<span style="--z:' + i + ';"></span>';
+                document.getElementById("circle2").innerHTML += '<span style="--z:' + i + ';"></span>';
+            }
+    </script>
+</html>

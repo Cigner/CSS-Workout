@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Circular Menu</title>
+        <link rel="stylesheet" href="circular_style.css">
+    </head>
+    <body>
+        <label>
+            <input type="checkbox" id="checkbox1" onclick="checkboxDisable()">
+            <span style="--i:0"><a><ion-icon name="settings-outline"></ion-icon></a></span>
+            <span style="--i:1"><a><ion-icon name="mail-outline"></ion-icon></a></span>
+            <span style="--i:2"><a><ion-icon name="key-outline"></ion-icon></a></span>
+            <span style="--i:3"><a><ion-icon name="videocam-outline"></ion-icon></a></span>
+            <span style="--i:4"><a><ion-icon name="game-controller-outline"></ion-icon></a></span>
+            <span style="--i:5"><a><ion-icon name="camera-outline"></ion-icon></a></span>
+            <span style="--i:6"><a><ion-icon name="chatbox-ellipses-outline"></ion-icon></a></span>
+            <span style="--i:7"><a><ion-icon name="planet-outline"></ion-icon></a></span>
+        </label>
+        <span class="return"><a href="./../index.html"><ion-icon name="home-outline"></ion-icon></a></span>
+    </body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function checkboxDisable() {
+            document.getElementById("checkbox1").setAttribute('disabled', true);
+            setTimeout(() => {
+                document.getElementById("checkbox1").removeAttribute('disabled');
+            }, 1300);
+        }
+    </script>
+</html>

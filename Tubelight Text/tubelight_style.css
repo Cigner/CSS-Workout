@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #07252d;
+}
+
+h2 {
+    position: relative;
+    font-size: 8em;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    color: #0e3742;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+    outline: none;
+    text-decoration: none;
+    line-height: 0.7em;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+        color: #0e3742;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: #fff;
+        --c: #03bcf4;
+        text-shadow: 0 0 10px var(--c), 0 0 20px var(--c), 0 0 40px var(--c), 0 0 80px var(--c), 0 0 160px var(--c);
+    } 
+}
+
+a {
+    position: absolute;
+    width: 100px;
+    background: #07252d;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    bottom: 0;
+    left: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: #0e3742;;
+    text-align: center;
+    font-weight: 550;
+    border: 3px solid #0e3742;
+    border-radius: 50px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.037), rgba(0, 0, 0, 0.243));
+    animation: animatebox 5s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes animatebox {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+        color: #0e3742;
+        text-shadow: none;
+        border-color: #0e3742;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: #fff;
+        --c: #03bcf4;
+        text-shadow: 0 0 20px var(--c), 0 0 40px var(--c), 0 0 80px var(--c), 0 0 160px var(--c), 0 0 320px var(--c);
+        border-color: #fff;
+    } 
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #042104;
+    animation: changecolor 16s linear infinite;
+}
+
+@keyframes changecolor {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.text {
+    position: absolute;
+    display: block;
+    justify-content: center;
+    color: rgb(237, 237, 237);
+    text-transform: uppercase;
+    font-size: 100px;
+    top: 0;
+    margin-top: 100px;
+}
+
+section .container {
+    display: flex;
+}
+
+section .container .circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 -15px;
+}
+
+section .container .circle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 360 / 20 = 18deg */
+    transform: rotate(calc(18deg * var(--z)));
+}
+
+section .container .circle span::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    background: #00ff0a;
+    border-radius: 50%;
+    /* NEON EFFECT */
+    box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 0 0 40px #00ff0a, 0 0 60px #00ff0a, 0 0 80px #00ff0a, 0 0 100px #00ff0a;
+    transform: scale(0.1);
+    animation: loop 2s linear infinite;
+    animation-delay: calc(0.05s * var(--z));
+}
+
+@keyframes loop {
+    0% {transform: scale(1)};
+    25% {transform: scale(0.1)};
+    50% {transform: scale(1)};
+}
+
+section .container .circle:nth-child(2) {
+    transform: rotate(-180deg);
+}
+
+section .container .circle:nth-child(2) span::before {
+    animation-delay: calc(-0.05s * var(--z));
+}
+
+a {
+    position: absolute;
+    width: 100px;
+    background: #00ff0a;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    bottom: 0;
+    left: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 50px;
+    z-index: 1;
+    box-shadow: 0 0 5px #00ff0a, 0 0 7.5px #00ff0a, 0 0 15px #00ff0a;
+}
+
+.button {
+    position: relative;
+    z-index: 3;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    background: white;
+    filter:opacity(0.7);
+    top: 0;
+    margin-left: 10px;
+    transform: skewX(20deg);
+    z-index: 2;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background: white;
+    filter:opacity(0.7);
+    top: 0;
+    margin-left: 23px;
+    transform: skewX(20deg);
+    z-index: 2;
+}
+
+a:hover {
+    filter: contrast(0.6);
+}
