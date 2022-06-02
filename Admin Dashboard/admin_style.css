@@ -85,7 +85,16 @@ body {
     display: flex;
     width: 100%;
     text-decoration: none;
+    color: rgb(189, 189, 189);
+    cursor: default;
+}
+
+.navigation ul li:nth-child(1) a, .navigation ul li:nth-child(2) a, .navigation ul li:last-child a {
     color: var(--whitetext);
+}
+
+.navigation ul li:nth-child(2) a, .navigation ul li:last-child a {
+    cursor: pointer;
 }
 
 .navigation ul li:hover a, .navigation ul li.hovered a {

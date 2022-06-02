@@ -80,6 +80,7 @@ label span a ion-icon {
 
 label input:checked ~ span a ion-icon {
     transform: rotateZ(calc(var(--i) * -45deg));
+    pointer-events: none;
 }
 
 .return {
@@ -104,4 +105,5 @@ label input:checked ~ span a ion-icon {
     top: calc(50% - 12.5px);
     left: calc(50% - 12.5px);
     color: black;
+    pointer-events: none;
 }
