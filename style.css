@@ -15,12 +15,13 @@ body {
     background: #22252e;
 }
 
-body .main {
+body .column {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 40px;
     align-items: center;
+    width: 500px
 }
 
 a {

@@ -83,7 +83,7 @@ label input:checked ~ span a ion-icon {
     pointer-events: none;
 }
 
-.return {
+a {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -98,7 +98,7 @@ label input:checked ~ span a ion-icon {
     margin-bottom: 0.5%;
 }
 
-.return a ion-icon {
+a .return ion-icon {
     width: 25px;
     height: 25px;
     position: relative;
