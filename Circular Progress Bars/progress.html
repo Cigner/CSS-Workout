@@ -7,15 +7,15 @@
     </head>
     <body>
         <div class="container">
-            <div class="card">
+            <div class="card" style="--id:1">
                 <div class="percent" style="--clr:#e34c26;--num:70">
                     <div class="dot"></div>
                     <svg>
                         <circle cx="70" cy="70" r="70"></circle>
                         <circle cx="70" cy="70" r="70"></circle>
                     </svg>
-                    <div class="number">
-                        <h2>70<span>%</span></h2>
+                    <div class="number num1" id="70">
+                        <h2 class="h1">70<span>%</span></h2>
                         <p>Html</p>
                     </div>
                 </div>
@@ -27,8 +27,8 @@
                         <circle cx="70" cy="70" r="70"></circle>
                         <circle cx="70" cy="70" r="70"></circle>
                     </svg>
-                    <div class="number">
-                        <h2>85<span>%</span></h2>
+                    <div class="number num2" id="85">
+                        <h2 class="h2">85<span>%</span></h2>
                         <p>CSS</p>
                     </div>
                 </div>
@@ -40,8 +40,8 @@
                         <circle cx="70" cy="70" r="70"></circle>
                         <circle cx="70" cy="70" r="70"></circle>
                     </svg>
-                    <div class="number">
-                        <h2>55<span>%</span></h2>
+                    <div class="number num3" id="55">
+                        <h2 class="h3">55<span>%</span></h2>
                         <p>JavaScript</p>
                     </div>
                 </div>
@@ -53,8 +53,8 @@
                         <circle cx="70" cy="70" r="70"></circle>
                         <circle cx="70" cy="70" r="70"></circle>
                     </svg>
-                    <div class="number">
-                        <h2>80<span>%</span></h2>
+                    <div class="number num4" id="80">
+                        <h2 class="h4">80<span>%</span></h2>
                         <p>Photoshop Tools</p>
                     </div>
                 </div>
@@ -62,4 +62,38 @@
         </div>
         <a href="./../index.html"><p class="button">Return</p></a>
     </body>
+    <script>
+        const percent1 = document.querySelector(".num1").id;
+            for(let i = 0; i <= percent1; i++) {
+                (function(i){
+                    setTimeout(function(){
+                        document.querySelector('.h1').innerHTML = i + '<span>%</span>';
+                    }, 22 * (i * 1 + 1));
+                })(i);
+            }
+        const percent2 = document.querySelector(".num2").id;
+            for(let i = 0; i <= percent2; i++) {
+                (function(i){
+                    setTimeout(function(){
+                        document.querySelector('.h2').innerHTML = i + '<span>%</span>';
+                    }, 18 * (i * 1 + 1));
+                })(i);
+            }
+        const percent3 = document.querySelector(".num3").id;
+            for(let i = 0; i <= percent3; i++) {
+                (function(i){
+                    setTimeout(function(){
+                        document.querySelector('.h3').innerHTML = i + '<span>%</span>';
+                    }, 27 * (i * 1 + 1));
+                })(i);
+            }
+        const percent4 = document.querySelector(".num4").id;
+            for(let i = 0; i <= percent4; i++) {
+                (function(i){
+                    setTimeout(function(){
+                        document.querySelector('.h4').innerHTML = i + '<span>%</span>';
+                    }, 19 * (i * 1 + 1));
+                })(i);
+            }
+    </script>
 </html>
