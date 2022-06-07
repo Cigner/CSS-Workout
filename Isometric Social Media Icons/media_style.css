@@ -79,6 +79,19 @@ body {
     background: var(--clr);
 }
 
+.container div:not(:hover) span {
+    animation: zindex 0.3s both;
+}
+
+@keyframes zindex {
+    0%,99.9% {
+        z-index: 1001;
+    }
+    100% {
+        z-index: 1;
+    }
+}
+
 .container div:hover span:nth-child(5) {
     transform: translate(40px, -40px);
     opacity: 1;
