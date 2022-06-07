@@ -60,8 +60,8 @@ body {
 
 .container .card .percent svg circle:nth-child(2) {
     stroke: var(--clr);
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
     stroke-linecap: round;
 }
 
@@ -83,22 +83,22 @@ body {
 
 @keyframes stroke1 {
     100% {
-        stroke-dashoffset: 190;
+        stroke-dashoffset: 130;
     }
 }
 @keyframes stroke2 {
     100% {
-        stroke-dashoffset: 130;
+        stroke-dashoffset: 70;
     }
 }
 @keyframes stroke3 {
     100% {
-        stroke-dashoffset: 260;
+        stroke-dashoffset: 200;
     }
 }
 @keyframes stroke4 {
     100% {
-        stroke-dashoffset: 150;
+        stroke-dashoffset: 90;
     }
 }
 
