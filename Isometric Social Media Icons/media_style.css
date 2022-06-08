@@ -9,17 +9,18 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
     background: #222;
     overflow: hidden;
 }
 
 .container {
-    position: relative;
-    max-width: 100%;
-    max-height: 100vh;
+    position: static;
+    width: 2000px;
+    height: 2000px;
+    margin-top: -30%;
+    margin-left: -110%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(50, 1fr);
     transform-style: preserve-3d;
     transform: rotate(-25deg) skew(25deg);
 }
@@ -71,19 +72,33 @@ body {
     transition: 0.3s;
 }
 
+.container div span ion-icon {
+    pointer-events: none;
+}
+
 .container div:hover span {
     z-index: 1000;
     transition: 0.3s;
     color: white;
     box-shadow: -1px 1px 1px rgba(0,0,0,0.05);
     background: var(--clr);
+    animation: zindexup 0.3s;
+}
+
+@keyframes zindexup {
+    0%,99.9% {
+        z-index: 1002;
+    }
+    100% {
+        z-index: 1000;
+    }
 }
 
 .container div:not(:hover) span {
-    animation: zindex 0.3s both;
+    animation: zindexdown 0.3s;
 }
 
-@keyframes zindex {
+@keyframes zindexdown {
     0%,99.9% {
         z-index: 1001;
     }
