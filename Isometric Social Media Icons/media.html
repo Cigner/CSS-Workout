@@ -5,63 +5,19 @@
         <title>Social Media Icons</title>
         <link rel="stylesheet" href="media_style.css">
     <body>
-        <div class="container" id="container">
-            <div style="--clr:#4267B2">
-                <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span><ion-icon name="logo-facebook"></ion-icon></span>
-                </a>
-            </div>
-            <div style="--clr:#00acee">
-                <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span><ion-icon name="logo-twitter"></ion-icon></span>
-                </a>
-            </div>
-            <div style="--clr:#FFFC00">
-                <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span><ion-icon name="logo-snapchat"></ion-icon></span>
-                </a>
-            </div>
-            <div style="--clr:#FF0000">
-                <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span><ion-icon name="logo-youtube"></ion-icon></span>
-                </a>
-            </div>
-            <div style="--clr:#4FCE5D">
-                <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span><ion-icon name="logo-whatsapp"></ion-icon></span>
-                </a>
-            </div>
-        </div>
+        <div class="container" id="container"></div>
     </body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
         var container = document.getElementById("container");
-        const icons = ['logo-facebook', 'logo-twitter', 'logo-snapchat', 'logo-youtube', 'logo-whatsapp'];
-        const colors = ['#4267B2', '#00ACEE', '#FFFC00', '#FF0000', '#4FCE5D'];
-        for(var i = 0; i < 1500; i++) {
+        const google_gradient = 'linear-gradient(-45deg, rgba(66,133,244,1) 0%, rgba(66,133,244,1) 24.9%, rgba(219,68,55,1) 25%, rgba(219,68,55,1) 49.9%, rgba(244,180,0,1) 50%, rgba(244,180,0,1) 74.9%, rgba(15,157,88,1) 75%, rgba(15,157,88,1) 100%);';
+        const instagram_gradient = 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);';
+        const icons = ['logo-facebook', 'logo-twitter', 'logo-snapchat', 'logo-youtube', 'logo-whatsapp', 'logo-discord', 'logo-google', 'logo-instagram', 'logo-pinterest', 'logo-reddit', 'logo-skype', 'logo-tiktok', 'logo-linkedin', 'logo-twitch'];
+        const colors = ['#4267B2', '#00ACEE', '#FFFC00', '#FF0000', '#4FCE5D', '#738ADB', google_gradient, instagram_gradient, '#C8232C', '#FF4301', '#00AFF0', '#1A121F', '#0E76A8', '#6441A5'];
+        for(var i = 0; i < 900; i++) {
             var index = Math.floor(Math.random() * icons.length);
-            container.innerHTML += '<div style="--clr:'+ colors[index] +'"><a href="#"><span></span><span></span><span></span><span></span><span><ion-icon name="'+ icons[index] +'"></ion-icon></span></a></div>';
+            container.innerHTML += '<div style="--clr:'+ colors[index] +'"><span></span><span></span><span></span><span></span><span><ion-icon name="'+ icons[index] +'"></ion-icon></span></div>';
         }
     </script>
 </html>

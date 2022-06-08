@@ -14,13 +14,10 @@ body {
 }
 
 .container {
-    position: static;
-    width: 2000px;
-    height: 2000px;
-    margin-top: -30%;
-    margin-left: -110%;
-    display: grid;
-    grid-template-columns: repeat(50, 1fr);
+    position: fixed;
+    width: calc(100% + 1000px);
+    height: calc(100% + 1000px);
+    display: block;
     transform-style: preserve-3d;
     transform: rotate(-25deg) skew(25deg);
 }
@@ -31,6 +28,7 @@ body {
     width: 60px;
     height: 60px;
     margin: 10px 10px;
+    float: left;
 }
 
 .container div:before {
