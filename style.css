@@ -10,18 +10,37 @@
 body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     min-height: 100vh;
     align-items: center;
     background: #22252e;
+    margin-top: 40px;
 }
 
-body .column {
+.segment {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    gap: 40px;
     align-items: center;
-    width: 500px
+    width: calc(100% - 100px);
+    height: 300px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+
+.segment:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.segment:last-child {
+    background-color: red !important;
+}
+
+.segment div {
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a {
@@ -35,6 +54,9 @@ a {
     padding: 10px 30px;
     transition: 0.5s;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: fit-content;
 }
 
@@ -97,4 +119,46 @@ a i::after {
 a:hover i::after {
     width: 20px;
     left: 80%;
+}
+
+.image {
+    position: relative;
+    width: 500px;
+}
+
+.image::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    position: absolute;
+    left: 85px;
+    top: -15px;
+    box-shadow: -10px -10px 0 white;
+}
+
+.image::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    position: absolute;
+    right: 85px;
+    bottom: -15px;
+    box-shadow: 10px 10px 0 white;
+}
+
+img {
+    width: 500px;
+}
+
+@media (max-width: 1417px) {
+    .segment:nth-child(n) {
+        flex-direction: column;
+        height: 450px;
+    }
+
+    .segment div {
+        margin: 50px;
+    }
 }
