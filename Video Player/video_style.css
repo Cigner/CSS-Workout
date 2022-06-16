@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.btn {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn .play {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    background: #f42e79;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 25px 50px #f42e7966;
+    transition: 0.5s;
+}
+
+.btn.active .play {
+    box-shadow: 0 0 0 150vh #f42e79;
+}
+
+.btn .play::before {
+    content: '';
+    position: absolute;
+    border: 50px solid #fff;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 0 solid transparent;
+    transform: translateX(10px);
+}
+
+.btn p {
+    font-weight: 500;
+    font-size: 2em;
+    color: #888;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.clip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+.clip.active {
+    transition-delay: 0.5s;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.clip video {
+    max-width: 900px;
+    outline: none;
+    border: 10px solid white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.clip .close {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    cursor: pointer;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2em;
+}
+
+@media (max-width: 901px) {
+    .clip video {
+        max-width: 90%;
+    }
+}
+
+#detach-button-host {
+    opacity: 0;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+
+.button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 20px;
+    color: white;
+    background: #f42e79;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-radius: 100vh;
+    z-index: 9999999;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.btn.active ~ a .button {
+    color: #f42e79;
+    background: white;
+}
