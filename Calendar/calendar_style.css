@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    transition: all .4s cubic-bezier(.5, .35, .15, 1.4), opacity .1s linear;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(255, 225, 225);
+}
+
+ul, li {
+    list-style: none;
+}
+
+.info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(112, 112, 112);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 32px;
+    margin-top: -350px;
+    letter-spacing: 4px;
+    cursor: default;
+}
+
+.container {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.container .signboard {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    position: absolute;
+}
+
+.signboard.front {
+    background-color: rgb(255, 128, 128);
+    z-index: 3;
+}
+
+.signboard.front ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.signboard.front ul li {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.signboard.front ul .day {
+    font-weight: 200;
+    font-size: 64px;
+}
+
+.signboard.front > .active-day, .signboard.left > .active-weekday, .signboard.right > .active-month {
+    transform: translateY(-50px);
+}
+
+.signboard.left {
+    background-color: rgb(53, 158, 224);
+    z-index: 1;
+    transform-origin: top left;
+    transform: rotateZ(5deg);
+}
+
+.signboard.left .hours, .signboard.right .seconds, .signboard.front .minutes {
+    height: 100%;
+    color: white;
+    font-size: 96px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 4px;
+}
+
+.signboard.front .minutes {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    transform: scale(0.6);
+    opacity: 0;
+    transition: opacity .25s, transform .4s cubic-bezier(.5, .35, .15, 1.4);
+}
+
+.signboard.right {
+    background-color: rgb(238, 211, 62);
+    z-index: 2;
+    transform-origin: top right;
+    transform: rotateZ(-10deg);
+}
+
+.container:hover .signboard {
+    transform: none;
+}
+
+.container:active .signboard {
+    transform: rotate(0) translate(0) scale(0.9);
+}
+
+.container:active .signboard.left {
+    transform: translate(-140px, -10px) rotate(5deg) scale(0.9);
+}
+
+.container:active .signboard.right {
+    transform: translate(140px, -10px) rotate(-5deg) scale(0.9);
+}
+
+.container .signboard.left .active-weekday {
+    color: rgb(53, 158, 224);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 4px;
+    opacity: 0;
+}
+
+.container .signboard.right .active-month {
+    color: rgb(238, 211, 62);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 4px;
+    opacity: 0;
+}
+
+.container .signboard.front .active-day {
+    color: #ff8080;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 4px;
+    opacity: 0;
+}
+
+.container:active .signboard.left .active-weekday, .container:active .signboard.right .active-month, .container:active .signboard.front .active-day {
+    transform: translateY(16px);
+    opacity: 1;
+}
+
+.container:active .signboard.front ul {
+    transform: scale(2);
+    opacity: 0;
+}
+
+.container:active .signboard.front .minutes {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    background: rgb(255, 128, 128);
+    border-radius: 16px;
+}

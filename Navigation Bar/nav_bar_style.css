@@ -7,10 +7,20 @@
     font-family: 'Poppins';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    width: 100vw;
+    overflow: hidden;
+}
+
+nav-bar1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     min-height: 100vh;
     background: #222327;
 }
@@ -125,7 +135,7 @@ body {
     opacity: 1;
 }
 
-.indicator {
+nav-bar1 .indicator {
     position: absolute;
     top: -35px;
     width: 70px;
@@ -136,7 +146,7 @@ body {
     transition: 0.5s;
 }
 
-.indicator::before {
+nav-bar1 .indicator::before {
     content: '';
     position: absolute;
     top: 5px;
@@ -148,7 +158,7 @@ body {
     box-shadow: 15px 18px white;
 }
 
-.indicator::after {
+nav-bar1 .indicator::after {
     content: '';
     position: absolute;
     top: 5px;
@@ -180,7 +190,7 @@ body {
     transform: translateX(calc(70px * 4));
 }
 
-.button {
+nav-bar1 .button {
     position: absolute;
     width: 80px;
     height: 80px;
@@ -195,8 +205,24 @@ body {
     text-align: center;
 }
 
-.button ion-icon {
+nav-bar1 .button ion-icon {
     width: 50%;
     height: 50%;
     color: #dd2c2c;
+}
+
+nav-bar1 .go_down {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 24px;
+    background-color: #dd2c2c;
+    border: none;
+    color: white;
+    border-radius: 24px;
+    font-weight: 400;
+    width: 96px;
+    font-size: 20px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
 }
