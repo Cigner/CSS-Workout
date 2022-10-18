@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'Cyberway';
+    src: url(./fonts/CyberwayRiders-lg97d.ttf);
+}
+
+@font-face {
+    font-family: 'Simplecat';
+    src: url(./fonts/CattieRegular-EaBG8.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #0c121e;
+    font-family: 'Cyberway';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 80px;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    width: 1920px;
+    height: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    box-sizing: border-box;
+    top: 0%;
+    left: 0%;
+    transform: scale(125%);
+    transition: transform 0.5s;
+}
+
+.hidden {
+    display: none;
+}
+
+#display {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    min-height: 64px;
+    color: #fdf500;
+    letter-spacing: 12px;
+    font-size: 32px;
+    line-height: 64px;
+    text-transform: uppercase;
+    background: transparent;
+    border-bottom: 4px solid #fdf500;
+    border-radius: 4px;
+    text-shadow: 0 0 2px #fdf500dd, 0 0 4px #fdf500dd, 0 0 8px #fdf500dd;
+}
+
+#display::after {
+    content: '';
+    top: 64px;
+    width: 700px;
+    height: 4px;
+    position: absolute;
+    background-color: #fdf500;
+    box-shadow: 0 0 2px #fdf500dd, 0 0 4px #fdf500dd, 0 0 8px #fdf500dd;
+}
+
+.keyboard {
+    width: fit-content;
+    border: 2px solid #fdf500;
+    box-shadow: 0 0 2px #fdf500dd, 0 0 4px #fdf500dd, 0 0 8px #fdf500dd, inset 0 0 2px #fdf500dd, inset 0 0 4px #fdf500dd, inset 0 0 8px #fdf500dd;
+    border-radius: 8px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    flex-wrap: nowrap;
+}
+
+.keyboard characters, numbers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.row {
+    margin: 21px;
+    user-select: none;
+    display: flex;
+    gap: 4px;
+    flex-wrap: nowrap;
+    
+}
+
+#characters .row:nth-child(2) {
+    margin-left: 48px;
+}
+
+#characters .row:nth-child(3) {
+    margin-left: 96px;
+}
+
+button {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    margin-inline: 9px;
+    border: none;
+    background: linear-gradient(90deg, rgb(14, 14, 14) 20%, rgb(21, 21, 21));
+    color: #fdf500;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 28px;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    outline: none;
+    word-wrap: break-word;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    background: linear-gradient(135deg, #2e2e2e, #070707 60%);
+    box-shadow: 10px 5px 10px rgba(0,0,0,0.15);
+    z-index: -1;
+    left: -4px;
+    top: -4px;
+    border-radius: 8px;
+}
+
+#backspace {
+    margin-left: 40px;
+    width: 160px;
+    color: black;
+    background: linear-gradient(90deg, #d9d200 20%, #fff71c);
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-top: 1px solid rgb(87, 90, 0);
+}
+
+#backspace::after {
+    width: 176px;
+    background: linear-gradient(135deg, #c6bf00, #665f00 60%);
+}
+
+.active {
+    box-shadow: inset -2px -2px 4px rgb(63, 63, 63), inset 2px 2px 4px black;
+    padding-left: 2px;
+}
+
+#enter.active {
+    box-shadow: inset -2px -2px 2px rgb(27, 164, 177), inset 2px 2px 2px rgb(0, 36, 44);
+}
+
+#backspace.active, #nums.active, #chars.active {
+    box-shadow: inset -2px -2px 2px rgb(255, 246, 79), inset 2px 2px 2px rgb(145, 148, 0);
+}
+
+#enter {
+    width: 180px;
+    margin-left: 86px;
+    margin-top: 2px;
+    background: linear-gradient(90deg, #009d9d 20%, #08f0f0);
+    letter-spacing: 4px;
+    font-weight: bold;
+    border-top: 1px solid #004e4e;
+}
+
+#enter::after {
+    width: 196px;
+    background: linear-gradient(135deg, #00f1f1, #003d3d);
+}
+
+#numbers {
+    margin-right: 112px;
+}
+
+#nums {
+    width: 100px;
+    margin-left: 306px;
+    margin-top: 2px;
+    color: black;
+    background: linear-gradient(90deg, #d9d200 20%, #fff71c);
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-top: 1px solid rgb(87, 90, 0);
+}
+
+#nums::after {
+    width: 116px;
+    background: linear-gradient(135deg, #c6bf00, #665f00 60%);
+}
+
+#chars {
+    color: black;
+    background: linear-gradient(90deg, #d9d200 20%, #fff71c);
+    font-weight: bold;
+    margin-left: 10px;
+    border-top: 1px solid rgb(87, 90, 0);
+}
+
+#chars::after {
+    width: 88px;
+    height: 87px;
+    background: linear-gradient(135deg, #c6bf00, #665f00 60%);
+}
+
+#zero {
+    width: 164px;
+}
+
+#zero::after {
+    width: 180px;
+}
+
+#numbers #backspace, #numbers #enter {
+    position: absolute;
+    height: 164px;
+    width: 72px;
+    margin: 0;
+    margin-left: 308px;
+}
+
+#numbers #backspace::after, #numbers #enter::after {
+    height: 180px;
+    width: 88px;
+}
+
+#numbers #backspace span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 22px;
+    letter-spacing: -8px;
+}
+
+#numbers #enter span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: -4px;
+}
+
+#chars {
+    font-size: 22px;
+}
+
+#numbers .row {
+    margin: 21px;
+}
